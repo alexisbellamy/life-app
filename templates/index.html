@@ -75,18 +75,19 @@
             }
         </style>
         {% for pet in pets %}
-        <div class="col">
-          <div class="card shadow-sm">
-            <h2>{{pet.name}}</h2>
-            <div style="background:url('{{pet.img}}');height:200px;background-size:cover"></div>
-            <div class="card-body">
-              <p class="card-text">Anniversaire : {{pet.birth}}</p>
-              <!-- <p class="card-text">Sexe : {% if pet.sexe %}Mâle{% else %}Femelle{% endif %}</p> -->
-              <p class="card-text">Taille : {{pet.height}}cm</p>
-              <a href="/pets/{{pet.name}}">GO</a>
+        <a href="/pets/{{pet.name}}">
+          <div class="col">
+            <div class="card shadow-sm">
+              <h2>{{pet.name}}</h2>
+              <div style="background:url('{{pet.img}}');height:200px;background-size:cover"></div>
+              <div class="card-body">
+                <p class="card-text">Anniversaire : {{pet.birth}}</p>
+                <!-- <p class="card-text">Sexe : {% if pet.sexe %}Mâle{% else %}Femelle{% endif %}</p> -->
+                <p class="card-text">Taille : {{pet.height}}cm</p>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
         {% endfor %}
       </div>
     </div>
