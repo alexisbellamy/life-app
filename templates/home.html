@@ -1,0 +1,35 @@
+{% block content %}
+<div style="width: 100vw;height: 100vh;display:flex;align-items:center;justify-content:center">
+    {% if user.is_authenticated %}
+      <script>window.location.href='/home'</script>>
+    {% else %}
+    <form method="POST" class="form-login" style="display: flex;flex-direction:column">
+        <h1 style="text-align:center">Life app</h1>
+        {% csrf_token %}
+        <input name="username" placeholder="Nom d'utilisateur"/>
+        <input name="password" type="password" placeholder="Mot de passe"/>
+        <button type="submit">Se connecter</button>
+      </form>
+    {% endif %}
+    <style>
+        .form-login input {
+            padding: 20px 10px;
+            border: 1px solid rgb(0, 179, 255);;
+            margin: 10px 0;
+            border-radius: 20px;
+            width: 300px;
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px;
+            padding: 10px;
+            background-color: rgb(0, 179, 255);
+            font-size: 20px;
+            font-weight: bolder;
+            color: white;
+            border: none;
+            border-radius: 10px;
+          }
+    </style>
+</div>
+{% endblock %}
