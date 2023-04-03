@@ -3,7 +3,8 @@
   <i id="peeIcon" class="fa-solid fa-droplet fa-sharp" {% if not pee %}style="display:none"{% endif %}></i>
   <i id="poopIcon" class="fa-solid fa-poop" {% if not poop %}style="display:none"{% endif %}></i>
   <i id="walkIcon" class="fa-solid fa-person-walking" {% if not walk %}style="display:none"{% endif %}></i>
-  <p id="walkdurationTime" {% if not time %}style="display:none"{% endif %}>{% if time %}{{time}}{% endif %}</p>  
+  <p id="walkdurationTime" {% if not time %}style="display:none"{% endif %}>{% if time %}{{time}}{% endif %}</p>
+  <p id="walkdurationTime" >{{long_time}}</p>  
 </div>
 
 <div class="chrono flex">
@@ -14,20 +15,20 @@
   </div>
 
   <div class="needsform">
-    <label for="poop">
+    <label for="poop" {% if in_needs_poop %}checked{% endif %}>
       <input type="checkbox" id="poop" name="poop" value="poop"
-      {% if in_needs_poop %}checked{% endif %}>
+      {% if in_needs_poop %}checked{% endif %} disabled>
       <i class="fa-solid fa-poop"></i>
     </label>
-    <label for="pee">
+    <label for="pee" {% if in_needs_pee %}checked{% endif %}>
       <input type="checkbox" id="pee" name="pee" value="pee"
-      {% if in_needs_pee %}checked{% endif %}>
+      {% if in_needs_pee %}checked disabled>
       <i class="fa-solid fa-droplet fa-sharp"></i>
     </label>
-    <label for="walk">
+    <label for="walk" {% if in_needs_walk %}checked{% endif %}>
       <input type="checkbox" id="walk" name="walk" value="walk"
-      {% if in_needs_walk %}checked{% endif %}>
-      <i class="fa-solid fa-person-walking"></i>
+      {% if in_needs_walk %}checked>
+      <i class="fa-solid fa-person-walking" ></i>
     </label>
   </div>
 
