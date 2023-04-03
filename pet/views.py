@@ -31,7 +31,8 @@ def get_current_needs(data=None):
         # we need to render minute, hour, 
         timer = datetime.datetime.now() - current_petneeds.date_in.replace(tzinfo=None) 
         
-        data['in_needs_hour'] = '{:02d}'.format(int(timer.seconds / 60 / 24))
+        data['in_needs_second'] = '{:02d}'.format(int(timer.seconds % 60))
+        data['in_needs_hour'] = '{:02d}'.format(int(timer.seconds / 60 / 60 / 24)
         data['in_needs_minute'] = '{:02d}'.format(int((timer.seconds / 60) % 60 ))
         # we need also enable button stop and disabled button start
         data['in_needs'] = True
