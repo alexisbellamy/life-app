@@ -15,7 +15,7 @@ def get_last_needs():
         time = datetime.datetime.now() - lastneeds.date_out.replace(tzinfo=None)
         time_hour = '{:02d}'.format(int(time.seconds / 60 / 60 / 24))
         time_minute = '{:02d}'.format(int((time.seconds / 60) % 60 ))
-        long_time = time_hour + 'heure(s) et' + time_minute + ' minute(s)'
+        long_time = time_hour + ' heure(s) et ' + time_minute + ' minute(s)'
         data = {
             "poop": lastneeds.poop,
             "pee": lastneeds.pee,
