@@ -12,7 +12,7 @@ def get_last_needs():
     data = {}
     lastneeds = PetNeeds.objects.filter(done=True).order_by('-date_out').first()
     if lastneeds:
-        time = datetime.datetime.now() - lastneeds.date_out.replace(tzinfo=None)
+        time = datetime.datetime.now() - lastneeds.date_out.replace(tzinfo='Europe/Paris')
         time_hour = '{:02d}'.format(int(time.seconds / 60 / 24))
         time_minute = '{:02d}'.format(int((time.seconds / 60) % 60 ))
         long_time = time_hour + 'heure(s) et' + time_minute + ' minute(s)'
