@@ -15,19 +15,19 @@
   </div>
 
   <div class="needsform">
-    <label for="poop" {% if in_needs_poop %}checked{% endif %}>
+    <label for="poop">
       <input type="checkbox" id="poop" name="poop" value="poop"
-      {% if in_needs_poop %}checked{% endif %} disabled>
+      {% if in_needs_poop %}checked{% endif %}>
       <i class="fa-solid fa-poop"></i>
     </label>
     <label for="pee" {% if in_needs_pee %}checked{% endif %}>
       <input type="checkbox" id="pee" name="pee" value="pee"
-      {% if in_needs_pee %}checked disabled>
+      {% if in_needs_pee %}checked{% endif %}>
       <i class="fa-solid fa-droplet fa-sharp"></i>
     </label>
     <label for="walk" {% if in_needs_walk %}checked{% endif %}>
       <input type="checkbox" id="walk" name="walk" value="walk"
-      {% if in_needs_walk %}checked>
+      {% if in_needs_walk %}checked{% endif %}>
       <i class="fa-solid fa-person-walking" ></i>
     </label>
   </div>
